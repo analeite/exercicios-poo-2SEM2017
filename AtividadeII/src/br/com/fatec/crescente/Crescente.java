@@ -5,6 +5,8 @@ public class Crescente {
 
 	public static void main(String[] args) {
 		
+		//Atividade de Laboratório II, exercício 2
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite o primeiro número: ");
