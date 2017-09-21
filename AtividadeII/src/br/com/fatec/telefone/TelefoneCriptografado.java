@@ -13,14 +13,14 @@ public class TelefoneCriptografado {
 		int n1, n2, n3, tel;
 
 		tel = Integer.parseInt(JOptionPane.showInputDialog(null,
-				"Digite o número de telefone (4 digitos) ou -1 para sair do " + "programa."));
+				"Digite um número (com 4 digitos) ou -1 para sair do programa."));
 		
 		while (tel != -1) {
 			if (Integer.toString(tel).length() > 4 || Integer.toString(tel).length() == 3
 					|| Integer.toString(tel).length() == 2 || Integer.toString(tel).length() == 1) {
 
 				tel = Integer.parseInt(JOptionPane.showInputDialog(null,
-						"Número inválido! Digite o número de telefone " + "usando apenas 4 digitos."));
+						"Número inválido! Digite o número usando apenas 4 digitos."));
 			} else {
 				int nroInicial = tel;
 
@@ -40,21 +40,32 @@ public class TelefoneCriptografado {
 				System.out.println("unidade = " + unidade);
 				
 				
-
-				vetor[2] = (milhar + 7) % 10;
-				System.out.println("\n\nVetor[2] = " + vetor[2]);
-
-				vetor[3] = (centena + 7) % 10;
-				System.out.println("Vetor[3] = " + vetor[3]);
-
-				vetor[0] = (dezena + 7) % 10;
-				System.out.println("Vetor[0] = " + vetor[0]);
-
-				vetor[1] = (unidade + 7) % 10;
-				System.out.println("Vetor[1] = " + vetor[1]);
+				//2
+				vetor[0] = (milhar + 7);
+				System.out.println("\n\nVetor[2] = " + vetor[0]);
+				//3
+				vetor[1] = (centena + 7) % 10;
+				System.out.println("Vetor[3] = " + vetor[1]);
+				//0
+				vetor[2] = (dezena + 7) % 10;
+				System.out.println("Vetor[0] = " + vetor[2]);
+				//1
+				vetor[3] = (unidade + 7) % 10;
+				System.out.println("Vetor[1] = " + vetor[2]);
+				
+				int aux0 = vetor[0];
+				int aux1 = vetor[1];
+				int aux2 = vetor[2];
+				int aux3 = vetor[3];
+				
+				vetor[0] = aux2;
+				vetor[1] = aux3;
+				vetor[2] = aux0;
+				vetor[3] = aux1;
+				
 
 				String nroFinal = vetor[0] + "" + vetor[1] + "" + vetor[2] + "" + vetor[3];
-				JOptionPane.showMessageDialog(null, "O telefone criptografado" + " é: " + nroFinal);
+				JOptionPane.showMessageDialog(null, "O número criptografado é: " + nroFinal);
 
 				System.exit(0);
 
