@@ -31,7 +31,7 @@ public class Pessoa {
 		this.telefone = telefone;
 	}
 	
-	public String getEmail (String email){
+	public String getEmail (){
 		return email;
 	}
 	
